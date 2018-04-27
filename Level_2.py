@@ -21,6 +21,7 @@ class B_Level_2:
         self.addList('2438', self.L2438)
         self.addList('2439', self.L2439)
         self.addList('2440', self.L2440)
+        self.addList('2441', self.L2441)
         
     def addList(self, obj, method):
         self.list.append({
@@ -58,3 +59,10 @@ class B_Level_2:
         input = int(raw_input())
         for i in reversed(range(1, input+1)):
             print '*'*i
+
+    def L2441(self):
+        input = int(raw_input())
+        for i in reversed(range(1, input+1)):
+            print '{0}{1}'.format(' '*(input-i), '*'*i)
+
+    
