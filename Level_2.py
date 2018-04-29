@@ -120,14 +120,12 @@ class B_Level_2:
             print(input[i:i+10])
 
     def L15552(self): #메모리초과
-        #import sys
         l = ""
         for i in range(0, int(sys.stdin.readline().rstrip())):
             l += str(sum(map(int, sys.stdin.readline().rstrip().split(' ')))) + '\n'
         print(l[0:-1])
     
     def L9498(self):
-        #import sys
         input = int(sys.stdin.readline().rstrip())
         if input >= 90 :
             print("A")
