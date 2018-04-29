@@ -60,6 +60,7 @@ class Scrap:
                 print(sam_in.strip())
                 print("* output " + str(i) + " *")
                 print(sam_out.strip())
+                print("")
 
         except IOError: 
             print("IO Error")

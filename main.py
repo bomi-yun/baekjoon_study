@@ -3,7 +3,7 @@ import Level_2
 import scrap_question
 
 s = scrap_question.Scrap()
-s.print_step(3)
+s.print_step(4)
 b = Level_2.B_Level_2()
 
 
