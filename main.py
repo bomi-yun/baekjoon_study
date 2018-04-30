@@ -1,10 +1,10 @@
 ﻿#-*- coding: utf-8 -*-
-import Level_2
+import Week_2
 import scrap_question
 
 s = scrap_question.Scrap()
 s.print_step(4)
-b = Level_2.B_Level_2()
+b = Week_2.B_Week_2()
 
 
 print(u"* 문제번호 입력 : ")

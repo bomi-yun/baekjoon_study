@@ -3,7 +3,7 @@
 import json
 import sys
 
-class B_Level_2:
+class B_Week_2:
     list = []
     def __init__(self):
         self.initList()
