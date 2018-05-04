@@ -2,51 +2,41 @@
 
 import json
 import sys
+import Step_Question
 
-class B_Week_2:
-    list = []
-    def __init__(self):
-        self.initList()
-        #for o in self.list:
-        #    print(o["no"] +" : "+ o["title"])
+class B_Week_2(Step_Question.Step):
     
-    def excute(self, no):
-        print(str(no) + u"실행")
-        for o in self.list:
-            if no == o["no"]:
-                o["method"]()
+    # https://www.acmicpc.net/step/3
+    # https://www.acmicpc.net/step/4
+
+    def __init__(self, step):
+        self.step = step
+        self.initList()
 
     def initList(self):
-        self.addList('2741', self.L2741)
-        self.addList('2742', self.L2742)
-        self.addList('2739', self.L2739)
-        self.addList('2438', self.L2438)
-        self.addList('2439', self.L2439)
-        self.addList('2440', self.L2440)
-        self.addList('2441', self.L2441)
-        self.addList('1924', self.L1924)
-        self.addList('8393', self.L8393)
-        self.addList('11720', self.L11720)
-        self.addList('11721', self.L11721)
-        self.addList('15552', self.L15552)
-        self.addList('9498', self.L9498)
-        self.addList('10817', self.L10817)
-        self.addList('10871', self.L10871)
-        self.addList('1546', self.L1546)
-        self.addList('4344', self.L4344)
-        self.addList('1110', self.L1110)
-        
-    def addList(self, obj, method):
-        self.list.append({
-            "no" : obj,
-            "method" : method
-        })
+        self.step.addList('2741', self.L2741)
+        self.step.addList('2742', self.L2742)
+        self.step.addList('2739', self.L2739)
+        self.step.addList('2438', self.L2438)
+        self.step.addList('2439', self.L2439)
+        self.step.addList('2440', self.L2440)
+        self.step.addList('2441', self.L2441)
+        self.step.addList('1924', self.L1924)
+        self.step.addList('8393', self.L8393)
+        self.step.addList('11720', self.L11720)
+        self.step.addList('11721', self.L11721)
+        self.step.addList('15552', self.L15552)
+        self.step.addList('9498', self.L9498)
+        self.step.addList('10817', self.L10817)
+        self.step.addList('10871', self.L10871)
+        self.step.addList('1546', self.L1546)
+        self.step.addList('4344', self.L4344)
+        self.step.addList('1110', self.L1110)
 
     def L2741(self):
         input = int(raw_input())
         for i in range(0, input):
             print(i+1)
-
     
     def L2742(self):
         input = int(raw_input())
