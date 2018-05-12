@@ -23,6 +23,6 @@ class Step: #백준 단계별 풀어보기 부모클래스
             if no == o["no"]:
                 o["method"]()
 
-    def print(self):
+    def printNo(self):
         for o in self.getList():
             print("{0}".format(o.no))
