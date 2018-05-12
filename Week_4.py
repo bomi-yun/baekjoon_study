@@ -5,7 +5,7 @@ import sys
 import Step_Question
 
 class B_Week_4(Step_Question.Step):
-    
+    # 완료
     # https://www.acmicpc.net/step/5
     # https://www.acmicpc.net/step/6
 
