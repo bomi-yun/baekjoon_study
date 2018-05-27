@@ -185,11 +185,11 @@ class B_Week_6(Step_Question.Step):
             if bucket.get(len(arr[i])) == None:
                 bucket[len(arr[i])] = []
             bucket[len(arr[i])].append(arr[i])
-        # print(bucket)
-        print("====")
+            
         for b in sorted(bucket.keys()):
             bucket[b].sort()
             for j in range(0, len(bucket[b])):
                 if j == 0 or (j > 0 and bucket[b][j-1] != bucket[b][j]) :
                     print(bucket[b][j])
         
+
