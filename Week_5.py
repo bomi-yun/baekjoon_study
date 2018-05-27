@@ -63,7 +63,7 @@ class B_Week_5(Step_Question.Step):
         else:
             print(str(n+s) + "/" + str(abs(s)+1))
 
-    def L1011(self):
+    def L1011(self): #확인필요
         #import sys
         case = int(sys.stdin.readline().rstrip())
         for i in range(0, case):
@@ -156,5 +156,3 @@ class B_Week_5(Step_Question.Step):
                     ret = tmp
             sys.stdout.write(str(ret))
                 
-
-
