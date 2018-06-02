@@ -1,28 +1,33 @@
-﻿#-*- coding: utf-8 -*-
-list = [False]*10000
-i = 1
-sum = 0
-while sum<10000:
-    sum = i
-    pow = 10
-    tmp = i
-    
-    while i/pow > 0:
-        sum += tmp%pow
-        tmp -= tmp%pow
-        pow *= 10
-    print(str(sum))
+﻿import sys
 
-    #이미 생성자가 있는 셀프넘버를 만나면 멈춤
-    if list[sum] == True:
-        for a in range(i, len(list)):
-            if list[a] == False:
-                i = a
-                a = len(list)
-    else:
-        list[sum] = True
-        i = sum
+def eratosthenes(end):
+    #에라토스테네스
+    list = [True] * (end+1)
+    list[0] = False
+    if end >= 1 : list[1] = False
+    n = 1
 
-for i in range(i, len(list)):
-    if list[i] == False:
-        print(str(i))
+    if end > 2 :
+        while n < end/2:
+            n += 1
+            if list[n]: 
+                for i in range(n*n, end+1, n):
+                    list[i] = False
+    return list  
+
+case = int(sys.stdin.readline().rstrip())
+arr = [0 for i in range(0, case)]
+max = 0
+
+for i in range(0, case):
+    arr[i] = int(sys.stdin.readline().rstrip())   
+    if max < arr[i] : max = arr[i]
+list = eratosthenes(max)
+
+for n in arr:
+    tmp = n/2
+    while tmp >= 2:  
+        if list[tmp] and list[n-tmp] :
+            print('{0} {1}'.format(tmp, n-tmp))   
+            break
+        tmp -= 1    
