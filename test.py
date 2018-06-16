@@ -1,33 +1,81 @@
-﻿import sys
+﻿#-*- coding: utf-8 -*-
 
-def eratosthenes(end):
-    #에라토스테네스
-    list = [True] * (end+1)
-    list[0] = False
-    if end >= 1 : list[1] = False
-    n = 1
+import sys
 
-    if end > 2 :
-        while n < end/2:
-            n += 1
-            if list[n]: 
-                for i in range(n*n, end+1, n):
-                    list[i] = False
-    return list  
+class Stack:
 
-case = int(sys.stdin.readline().rstrip())
-arr = [0 for i in range(0, case)]
-max = 0
+    def __init__(self):
+        self.stack = []
 
-for i in range(0, case):
-    arr[i] = int(sys.stdin.readline().rstrip())   
-    if max < arr[i] : max = arr[i]
-list = eratosthenes(max)
+    def pop(self):
+        if self.isEmpty():
+            return -1
+        else :
+            ret = self.stack[len(self.stack)-1]
+            del self.stack[len(self.stack)-1]
+            return ret
+        
+    def push(self, data):
+        self.stack.append(data)
 
-for n in arr:
-    tmp = n/2
-    while tmp >= 2:  
-        if list[tmp] and list[n-tmp] :
-            print('{0} {1}'.format(tmp, n-tmp))   
-            break
-        tmp -= 1    
+    def getSize(self):
+        return len(self.stack)
+
+    def isEmpty(self):
+        if len(self.stack) < 1: 
+            return True
+        else :
+            return False
+
+    def top(self):
+        if not self.isEmpty():
+            return self.stack[len(self.stack)-1]
+        else:
+            return -1
+
+    
+    def getStack(self):
+        return self.stack
+    
+input = sys.stdin.readline().rstrip()
+stack = Stack()
+sum = 0
+
+for s in input :
+    if s == ')' and stack.top() == '(':
+        stack.pop()
+        stack.push(2)
+    elif s == ']' and stack.top() == '[':
+        stack.pop()
+        stack.push(3)
+    else :
+        stack.push(s)
+
+    if stack.top() == ')' :
+        stack.pop()
+        ret = stack.pop() * 2
+        if not isinstance(ret,int) or stack.isEmpty(): break
+        stack.pop()
+        stack.push(ret)
+    elif stack.top() == ']' :
+        stack.pop()
+        ret = stack.pop() * 3
+        if not isinstance(ret,int) or stack.isEmpty(): break
+        stack.pop()
+        stack.push(ret)
+        
+
+
+    if not stack.isEmpty() and stack.top() != '(' and stack.top() != '[' and stack.top() != ')' and stack.top() != ']':
+        
+        tmp = stack.pop()
+        
+        if not stack.isEmpty() and stack.top() != '(' and stack.top() != '[' and stack.top() != ')' and stack.top() != ']':
+            stack.push(stack.pop() + tmp)
+        else:
+            stack.push(tmp)
+print(stack.getStack())
+if stack.getSize() != 1 or (stack.top() == '[' or stack.top() == '('):
+    print("0")
+else :
+    print(stack.top())
