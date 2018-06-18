@@ -1,5 +1,8 @@
 ﻿#-*- coding: utf-8 -*-
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 import sys
 
 class Stack:
@@ -32,6 +35,7 @@ class Stack:
             return self.stack[len(self.stack)-1]
         else:
             return -1
+<<<<<<< Updated upstream
 
     
     def getStack(self):
@@ -79,3 +83,22 @@ if stack.getSize() != 1 or (stack.top() == '[' or stack.top() == '('):
     print("0")
 else :
     print(stack.top())
+=======
+case = int(sys.stdin.readline().rstrip())
+stack = Stack()
+for i in range(0, case):
+    line = sys.stdin.readline().rstrip().split(' ')
+    input = line[0]
+    if input == 'pop':
+        print(stack.pop())
+    elif input == 'push':
+        stack.push(int(line[1]))
+    elif input == 'empty':
+        if stack.isEmpty():
+            print(1)
+        else : print(0)
+    elif input == 'top':
+        print(stack.top())
+    elif input == 'size':
+        print(stack.getSize())
+>>>>>>> Stashed changes
