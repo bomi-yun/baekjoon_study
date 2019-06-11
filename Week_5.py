@@ -26,6 +26,7 @@ class B_Week_5(Step_Question.Step):
 
     def L2438(self):
         #import sys
+        #test
         input = int(sys.stdin.readline().rstrip())
         for i in range(0, input):
             sys.stdout.write('*'*i)
