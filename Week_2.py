@@ -34,7 +34,6 @@ class B_Week_2(Step_Question.Step):
         self.step.addList('1110', self.L1110)
 
     def L2741(self):
-        #test
         input = int(raw_input())
         for i in range(0, input):
             print(i+1)
