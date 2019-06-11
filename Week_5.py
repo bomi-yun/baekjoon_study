@@ -14,6 +14,7 @@ class B_Week_5(Step_Question.Step):
         self.initList()
 
     def initList(self):
+        #test
         self.step.addList('2438', self.L2438)
         self.step.addList('2292', self.L2292)
         self.step.addList('1193', self.L1193)
